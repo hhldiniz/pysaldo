@@ -23,7 +23,7 @@ class SubscriberStarter(Thread):
             self.subscriber.set_hash("")
 
     def run(self):
-        self.subscriber.get_mqtt_client().loop_forever(timeout=20)
+        self.subscriber.get_mqtt_client().loop_start()
         while True:
             self.execute_withdraw(10)
             sleep(1)

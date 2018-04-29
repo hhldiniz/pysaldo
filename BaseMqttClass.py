@@ -13,15 +13,15 @@ class BaseMqtt:
     @staticmethod
     def on_connect(client, userdata, flags, rc):
         print("Connected")
-        print(f"Client info: #{client}. Connection status: #{rc}")
-        print(f"Userdata: #{userdata}")
-        print(f"Flags: #{flags}")
+        print(f"Client info: {client}. Connection status: {rc}")
+        print(f"Userdata: {userdata}")
+        print(f"Flags: {flags}")
 
     @staticmethod
     def on_disconnect(client, userdata, rc):
         if rc != 0:
-            print(f"Client info: #{client}. Connection status: #{rc}")
-            print(f"Userdata: #{userdata}")
+            print(f"Client info: {client}. Connection status: {rc}")
+            print(f"Userdata: {userdata}")
             print("Disconectado abruptamente")
 
     def on_message(self, client, userdata, message):

@@ -25,5 +25,6 @@ class Publisher(BaseMqtt):
     def on_message(self, client, userdata, message):
         if message.topic == "saldo/retirada":
             self.withdraw(message.payload)
+            print(message.payload)
         elif message.topic == "saldo/deposito":
             self.deposit(message.payload)
