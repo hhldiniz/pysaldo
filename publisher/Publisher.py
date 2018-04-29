@@ -8,6 +8,7 @@ class Publisher(BaseMqtt):
         self.publish_value("saldo/valor", self.__saldo)
 
     def publish_value(self, topic, payload):
+        print(payload)
         self.get_mqtt_client().publish(topic, payload)
 
     def get_saldo(self):
